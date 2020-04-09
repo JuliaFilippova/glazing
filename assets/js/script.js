@@ -128,7 +128,7 @@ $('.prg-right').on('click', function (event) {
 
 // Отправка заявки 
 $(document).ready(function () {
-  $('.form').submit(function () { // проверка на пустоту заполненных полей.
+  $('form').submit(function () { // проверка на пустоту заполненных полей.
     if (document.form.name.value == '' || document.form.phone.value == '') {
       valid = false;
       return valid;
@@ -140,8 +140,27 @@ $(document).ready(function () {
     }).done(function () {
       $('#modal-thanks').fadeIn();
       // $(this).find('input').val('');
-      $('.form').trigger('reset');
+      $('form').trigger('reset');
     });
     return false;
   });
 });
+
+// $(document).ready(function() {
+// 	$('#formCall').submit(function() { // проверка на пустоту заполненных полей. Атрибут html5 — required не подходит (не поддерживается Safari)
+// 		if (document.form.name.value == '' || document.form.phone.value == '' ) {
+// 			valid = false;
+// 			return valid;
+// 		}
+// 		$.ajax({
+// 			type: "POST",
+// 			url: "mail/mail.php",
+// 			data: $(this).serialize()
+// 		}).done(function() {
+// 			$('.js-overlay-window-thank-you').fadeIn();
+// 			$(this).find('input').val('');
+// 			$('#formCall').trigger('reset');
+// 		});
+// 		return false;
+// 	});
+// });
