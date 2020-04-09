@@ -128,7 +128,7 @@ $('.prg-right').on('click', function (event) {
 
 // Отправка заявки 
 $(document).ready(function () {
-  $('form').submit(function () { // проверка на пустоту заполненных полей.
+  $('#formHead').submit(function () { // проверка на пустоту заполненных полей.
     if (document.form.name.value == '' || document.form.phone.value == '') {
       valid = false;
       return valid;
@@ -140,7 +140,7 @@ $(document).ready(function () {
     }).done(function () {
       $('#modal-thanks').fadeIn();
       // $(this).find('input').val('');
-      // $('form').trigger('reset');
+      $('#formHead').trigger('reset');
     });
     return false;
   });
