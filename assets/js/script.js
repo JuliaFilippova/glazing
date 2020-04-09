@@ -140,7 +140,7 @@ $(document).ready(function () {
     }).done(function () {
       $('#modal-thanks').fadeIn();
       // $(this).find('input').val('');
-      $('form').trigger('reset');
+      // $('form').trigger('reset');
     });
     return false;
   });
